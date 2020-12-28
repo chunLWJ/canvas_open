@@ -13,7 +13,8 @@ window.onload = function () {
         HAND_RADIUS = RADIUS + NUMERAL_SPACING;
 
     context.font = FONT_HEIGHT + "px Arial"; // 设置字体
-    let loop = setInterval(drawClock,1000)
+
+    setInterval(drawClock,1000)
 
     // 每秒的绘制函数
     function drawClock(){
@@ -32,7 +33,7 @@ window.onload = function () {
         console.log(numerals)
         numerals.forEach(value => {
             angle = Math.PI / 6 * (value - 3)
-            numeralWidth = context.measureText(value).width
+            numeralWidth = context.measureText(value.toString()).width
             context.fillText(
                 value.toString(),
                 canvas.width / 2 + Math.cos(angle) * HAND_RADIUS - numeralWidth / 2,
@@ -58,7 +59,7 @@ window.onload = function () {
 
     // 绘制 时分秒 的指针
     function drawHands(){
-        var date = new Date(),
+        let date = new Date(),
             hour = date.getHours();
         hour = hour > 12 ? hour - 12 : hour
 
