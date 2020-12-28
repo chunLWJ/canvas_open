@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>橡皮筋框选</title>
+    <link rel="stylesheet" href="../../css/index.css">
+
+    <style>
+        #controls {
+            margin: 20px 0px 20px 20px;
+        }
+        #rubberBand {
+            position: absolute;
+            border: 3px  solid blue;
+            cursor: crosshair;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="controls">
+        <input type="button" id="resetButton" value="重置">
+    </div>
+    <div id="rubberBand"></div>
+    <canvas id="canvas" width="600" height="600">
+        当前不支持画布，请更换浏览器
+    </canvas>
+    <script src="index.js"></script>
+</body>
+</html>
